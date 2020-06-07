@@ -1,0 +1,127 @@
+/*Mruga Shah, mts339@drexel.edu
+#CS 530: DUI, Asssignment 1 */
+
+body {
+    font-family: "Avenir";
+    font-size: 1rem;
+    background: #fff;
+}
+
+header {
+    background: #006298;
+	background-image: url("/img/dance/bo2.jpg");
+	height: 100vh;
+	color: #fff;
+	padding: 40px;
+}
+
+header #rt1{
+	padding: 10px;
+}
+
+.t1{
+	text-align:center;
+	padding: 10px;
+}
+
+#t2{
+	background-color: #9999ff;
+}
+
+.btn {
+    background: #333333;
+    border-color: #333333;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #a7a8aa;
+    border-color: #333333;
+    color: #fff;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+	color: #000000;
+}
+.nav-link:hover{
+	color: #000000;
+	background-color: #a7a8aa;
+}
+
+.content {
+    padding: 2rem 1.5rem;
+}
+
+.jumbotron {
+    padding: 1.5rem;
+    background: 0;
+}
+
+.jumbotron img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table img{
+	max-width: 100px;  /*Max width of the image is set to 100 px so that none of the images go out of boundary*/
+}
+
+.unavailable{
+	opacity: 0.25;	/*Opacity of unavailable class is set to 0.25. Unavailable class is added to the row whose availability goes to 0*/
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#sidebar {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-style: solid;
+}

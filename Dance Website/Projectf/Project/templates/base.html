@@ -1,0 +1,154 @@
+<!--Mruga Shah, mts339@drexel.edu
+#CS 530: DUI, Asssignment 1 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drexel Bikes- {% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="/course/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+    <script src="/course/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/course/lib/popper/popper.min.js"></script>
+    <script src="/course/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+			<div class="row" id="sidebar">
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+			</div>
+			<div id="mySidenav" class="sidenav">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a href="/index#1">About</a>
+			  <a href="#">Dance Styles</a>
+			  <ul>
+				<a href="/styles#1">All Styles</a>
+				{%if session['user']%}
+				<a href="/register#1">Registration</a>
+				{%else%}
+				<a href="#" onclick="alert('Login to Register')">Registration</a>
+				{%endif%}
+			  </ul>
+			  <a href="/contact#1">Contact Us</a>
+			  {%if session['user']%}
+			  <a href="/profile#1">My Profile</a>
+			  <a href="/logout">Logout</a>
+			  {%else%}
+			  <a href="/login">Login</a>
+			  <a href="/signup">Sign Up</a>
+			  {%endif%}			
+			</div>
+			<div class="row" id="rt1">
+				<div class="col-sm-12">
+				<h1 class="t1">Any Body Can Dance</h1>
+				</div>
+				<div class="col-sm-6">
+				</div>
+				<a href="#1">
+				<svg width="40" height="25" viewBox="-2.5 -5 75 60" preserveAspectRatio="none">
+				<path d="M0,0 l35,50 l35,-50" fill="none" stroke="white" stroke-linecap="round" stroke-width="5" />
+				</svg>
+				</a>
+			<div>
+		</div>
+    </header>
+
+    <main id="1">
+		<div class="container-fluid" id="t2">
+            <div class="row">
+				<div class="col-sm-1">
+				</div>
+                <div class="col-sm-8">
+                    <nav class="navbar navbar-expand-md navbar-dark">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item{% if active == 'Home' %} active{% endif %}">
+                                    <a class="nav-link" href="/" style="color: #000000;"><b>Home</b></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #000000;">
+                                        <b>Dance Styles</b>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item{% if active == 'Styles' %} active{% endif %}" href="/styles#1">All Styles</a> <!--Added links that takes us to the Our Bikes page-->
+                                        {%if session['user']%}
+										<a class="dropdown-item{% if active == 'Register' %} active{% endif %}" href="/register#1">Registration</a> <!--Added links that takes us to the Rent Bikes page-->
+										{%else%}
+										<a class="dropdown-item{% if active == 'Register' %} active{% endif %}" href="#1" onclick="alert('Login to Register')">Registration</a> <!--Added links that takes us to the Rent Bikes page-->
+										{%endif%}
+									</div>
+                                </li>
+								<li class="nav-item{% if active == 'ContactUs' %} active{% endif %}">
+                                    <a class="nav-link" href="/contact#1" style="color: #000000;"><b>Contact Us</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+				{%if session['user']%}
+				<div class="col-sm-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #000000;">Hi {{session['user']}}!</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item{% if active == 'profile' %} active{% endif %}" href="/profile#1">My Profile</a> <!--Added links that takes us to the Rent Bikes page-->
+                        <a class="dropdown-item{% if active == 'RentBikes' %} active{% endif %}" href="/logout">Logout</a> <!--Added links that takes us to the Rent Bikes page-->
+					</div>
+				</div>
+				{%else%} 
+				<div class="col-sm-1">
+					<a class="nav-link" href="/login" style="color: #000000;">Login</a>					
+				</div>
+				<div class="col-sm-2">	
+					<a class="nav-link" href="/signup" style="color: #000000;">Sign Up</a>		
+				</div>
+				{%endif%}
+            </div>
+        </div>
+        <div class="container content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+<script>
+var textWrapper = document.querySelector('.t1');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.t1 .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70*i
+  }).add({
+    targets: '.t1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 8000
+  });
+  
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("sidebar").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("sidebar").style.marginLeft= "0";
+}
+</script>
+
+</body>
+
+</html>

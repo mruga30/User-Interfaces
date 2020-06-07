@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+
+<title>Any Body Can Dance - Login</title> 
+
+<style>
+body{
+	background-image: url("https://bloximages.newyork1.vip.townnews.com/southbendtribune.com/content/tncms/assets/v3/editorial/a/5e/a5ebd339-c7f5-5120-ad1b-3b9698c77ba9/5dc20852675f5.image.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	height: 100vh;
+	color: #000000;
+}
+
+input[type=text], input[type=password] {
+    padding: 6px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form{
+	background-color: rgba(192,192,192,0.9);
+	border: 1px solid #ccc;
+	width: 300px;
+	height: 310px;
+}
+
+.content{
+	position: absolute;
+	top: 28%;
+	left: 40%;
+}
+
+</style>
+</head>
+
+<body>
+<div class="content" id="id01">
+  
+  <form action="{{ url_for('logintry')}}" method="post">
+	<p style="color:red"><b>{{msg}}</b></p>
+    <p style="color:darkblue"><b>ANY BODY CAN DANCE</b><p>
+    <p>Enter your credetials to login:</p>
+    <div class="container">
+      <label for="uname">Username:</label>
+      <input type="text" placeholder="Enter Username" name="uname" required value="{{request.form.uname}}"></br>
+
+      <label for="psw">Password:</label>
+      <input type="password" placeholder="Enter Password" name="psw" required value="{{request.form.psw}}"></br></br>
+  
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label></br></br>
+
+      <span class="psw">Forgot <a href="#">password?</a></span>
+	  <p>Go back to <a href="/">Home</a> page.</p>	  
+    </div>
+  </form>
+</div>
+<script>
+</script>
+</body>
+
+</html>

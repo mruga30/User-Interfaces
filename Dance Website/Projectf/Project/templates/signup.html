@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+
+<title>Any Body Can Dance - Create Account</title> 
+
+<style>
+body{
+	background-image: url("http://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/04/03/Style/Images/Anuradha_3.JPG?uuid=mrUBGPm_EeWA5MOBIU3how");
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	height: 100vh;
+	color: #000000;
+}
+
+input[type=text], input[type=password] {
+    padding: 6px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form{
+	background-color: rgba(192,192,192,0.9);
+	border: 1px solid #ccc;
+	width: 350px;
+	height: 380px;
+}
+
+.content{
+	position: absolute;
+	top: 22%;
+	left: 37%;
+}
+
+</style>
+</head>
+
+<body>
+<div class="content" id="id01">
+  
+  <form action = "{{ url_for('usersrec')}}" method = "POST">
+	<p style="color:red">{{msg}}</p>
+    <p style="color:darkblue"><b>ANY BODY CAN DANCE</b><p>
+    <p>Please fill the details below to create an account:</p>
+    <div class="container">
+      <label for="fname">First Name:</label>
+      <input type="text" placeholder="First Name" name="fname" required></br>
+
+      <label for="lname">Last Name:</label>
+      <input type="text" placeholder="Last Name" name="lname" required></br>
+
+      <label for="ename"> Email ID: </label>
+      <input type="text" placeholder="Email id" name="ename" required></br>
+
+      <label for="uname">Username:</label>
+      <input type="text" placeholder="Enter Username" name="uname" required></br>
+
+      <label for="pwd">Password:</label>
+      <input type="password" placeholder="Enter Password" name="pwd" required></br></br>
+        
+      <button type="submit">Register</button>
+	  <p>Go back to <a href="/">Home</a> page.</p>
+    </div></br>
+
+  </form>
+</div>
+</body>
+
+</html>

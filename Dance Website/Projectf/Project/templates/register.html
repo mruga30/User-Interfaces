@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% set active = "Register" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <h1 class="jumbotron-heading">Register</h1>
+	<form action = "{{ url_for('regrec')}}" method = "POST">
+    <p>Enter your details to register for the class:</p>
+    <div class="outercontainer">
+      <label for="cname">Select Class: </label>&emsp;&emsp;&emsp;
+	  <select placeholder="" name="styles">
+		<option value="Bharatnatyam">Bharatnatyam</option>
+		<option value="Kathak">Kathak</option>
+		<option value="Bhangra">Bhangra</option>
+		<option value="Garba">Garba</option>
+	  </select></br>
+	  
+	  <label for="start">End date:</label>&emsp;&emsp;&emsp;&emsp;
+	  <input type="date" name="lastdate" max="2020-12-31" min ="2020-03-31"></br>
+	  
+      <label for="ename">Email ID: </label>&emsp;&emsp;&emsp;&emsp;
+      <input type="text" placeholder="email" name="ename" required value="{{request.form.uname}}">
+	  
+      <p>Price: 15.00</p></br>
+  
+      <button type="submit">Register</button></br></br>
+	  <p style="color:red"><b>{{mesg}}</b></p>
+    </div>
+  </form>
+</section>
+
+{% endblock %}

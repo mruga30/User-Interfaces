@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% set active = "Home" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <h1 class="jumbotron-heading">Dance Styles</h1>
+	<p>Our Classes teach different dance styles from India. Classes are divided into batches and the dance styles taught are Freestyle (Bollywood), Folk (Garba, Bhangra) and Classical(Kathak, Bharatnatyam). Login to register for the classes. Each class costs the students <b>15$/hour.</b></p>
+	</br></br>
+	<div class="container-outer">
+	<div class="row">
+		<div class="col-sm-4">
+		</div>
+		<h2><b>Indian Classical Styles</b></h2>
+	</div></br>
+	<div class="row">
+		<div class="col-sm-6">
+			<img src="\img\dance\kathak1.jpg" style="max-width: 400px"/>
+			<div class="text-block">
+			<h4>Kathak</h4>
+			<p>Mon,Wed,Fri: 6pm-7pm</p>
+			</div>
+		</div>
+		<div class= "col-sm-6">
+			<img src="\img\dance\b1.jpg" style="max-width: 400px"/>
+			<div class="text-block">
+			<h4>Bharatnatyam</h4>
+			<p>Mon,Wed,Fri: 7pm-8pm</p>
+			</div>
+		</div>
+	</div></br></br>
+	<div class="row">
+		<div class="col-sm-4">
+		</div>
+		<h2><b>Indian Folk Styles</b></h2>
+	</div></br>
+	<div class="row">
+		<div class="col-sm-6">
+			<img src="\img\dance\bh2.jpg" style="width: 400px"/>
+			<div class="text-block">
+			<h4>Bhangra</h4>
+			<p>Tue,Thur: 6pm-7pm</p>
+			</div>
+		</div>
+		<div class= "col-sm-6">
+			<img src="\img\dance\ga2.jpg" style="width: 400px"/>
+			<div class="text-block">
+			<h4>Garba</h4>
+			<p>Tue,Thur: 7pm-8pm</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

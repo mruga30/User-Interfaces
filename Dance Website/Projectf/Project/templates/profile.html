@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% set active = "profile" %}
+
+{% block title %}
+My profile
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <h1 class="jumbotron-heading">My Profile</h1>
+    <p><b>Name:</b> {{fname}} {{lname}}</p>
+	<p><b>Email ID:</b> {{email}}</p>
+	<p><b>Class registered for:</b> {{style}}{{msg}}</p>
+</section>
+
+{% endblock %}
